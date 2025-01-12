@@ -1,7 +1,7 @@
 """Example comparing responses from different LLM providers."""
 import asyncio
 import os
-from modelrouter import OpenAIProvider, AnthropicProvider, OllamaProvider, Message
+from simplemodelrouter import OpenAIProvider, AnthropicProvider, OllamaProvider, Message
 
 async def get_response(provider, prompt: str) -> str:
     """Get a response from a provider."""

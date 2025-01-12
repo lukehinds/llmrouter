@@ -1,6 +1,6 @@
 import pytest
 from typing import AsyncIterator, List
-from modelrouter.base import Message, ChatResponse, CompletionResponse
+from simplemodelrouter.base import Message, ChatResponse, CompletionResponse
 
 def test_message_creation():
     """Test Message dataclass creation."""

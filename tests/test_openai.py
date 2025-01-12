@@ -4,7 +4,7 @@ import json
 from typing import AsyncIterator, List
 from unittest.mock import AsyncMock, MagicMock, patch
 
-from modelrouter import OpenAIProvider, Message, ChatResponse, CompletionResponse
+from simplemodelrouter import OpenAIProvider, Message, ChatResponse, CompletionResponse
 
 @pytest.fixture
 def mock_response():

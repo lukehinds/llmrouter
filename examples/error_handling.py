@@ -1,7 +1,7 @@
 """Example demonstrating error handling with LLM providers."""
 import asyncio
 import httpx
-from modelrouter import OpenAIProvider, AnthropicProvider, OllamaProvider, Message
+from simplemodelrouter import OpenAIProvider, AnthropicProvider, OllamaProvider, Message
 
 async def test_provider(provider, name: str):
     """Test a provider with various error scenarios."""

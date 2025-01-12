@@ -1,7 +1,7 @@
 """Example demonstrating OpenAI streaming functionality."""
 import asyncio
 import os
-from modelrouter import OpenAIProvider, Message
+from simplemodelrouter import OpenAIProvider, Message
 
 async def stream_chat(provider, messages, **kwargs):
     """Stream a chat response."""

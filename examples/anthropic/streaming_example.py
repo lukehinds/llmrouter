@@ -1,7 +1,7 @@
 """Example demonstrating Anthropic streaming functionality."""
 import asyncio
 import os
-from modelrouter import AnthropicProvider, Message
+from simplemodelrouter import AnthropicProvider, Message
 
 async def stream_chat(provider, messages, **kwargs):
     """Stream a chat response."""

@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "modelrouter"
+name = "simplemodelrouter"
 version = "0.1.0"
 description = "A Python library for interfacing with various LLM inference endpoints"
 authors = ["Luke Hinds <luke@stacklok.com>"]
 license = "Apache-2.0"
 readme = "README.md"
-packages = [{include = "modelrouter"}]
+packages = [{include = "simplemodelrouter"}]
 keywords = ["llm", "ai", "openai", "anthropic", "ollama"]
 classifiers = [
     "Development Status :: 3 - Alpha",

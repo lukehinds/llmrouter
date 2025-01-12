@@ -1,7 +1,7 @@
 """Example demonstrating OpenAI completion functionality."""
 import asyncio
 import os
-from modelrouter import OpenAIProvider
+from simplemodelrouter import OpenAIProvider
 
 async def main():
     # Initialize provider
