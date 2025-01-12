@@ -1,5 +1,26 @@
-from typing import Any, List, Optional
+from typing import Any, Dict, List, Optional
 from pydantic import BaseModel
+from dataclasses import dataclass, field
+
+
+@dataclass
+class Message:
+    content: str
+    role: str
+
+@dataclass
+class NormalizedRequest:
+    messages: List[Message]
+    model: str
+    stream: bool = True
+    options: Dict[str, Any] = field(default_factory=dict)
+
+class ChatResponse(BaseModel):
+    id: str
+    messages: List[Message]
+    created: int  # Unix timestamp
+    model: str
+    done: bool = False
 
 
 class Delta(BaseModel):
