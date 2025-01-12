@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "simplemodelrouter"
-version = "0.1.0"
+version = "0.1.2"
 description = "A Python library for interfacing with various LLM inference endpoints"
 authors = ["Luke Hinds <luke@stacklok.com>"]
 license = "Apache-2.0"
