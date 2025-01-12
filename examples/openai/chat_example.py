@@ -1,7 +1,7 @@
 """Example demonstrating OpenAI chat functionality."""
 import asyncio
 import os
-from llmrouter import OpenAIProvider, Message
+from modelrouter import OpenAIProvider, Message
 
 async def main():
     # Initialize provider

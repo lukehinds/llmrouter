@@ -1,7 +1,7 @@
 """Example demonstrating Anthropic chat functionality."""
 import asyncio
 import os
-from llmrouter import AnthropicProvider, Message
+from modelrouter import AnthropicProvider, Message
 
 async def main():
     # Initialize provider

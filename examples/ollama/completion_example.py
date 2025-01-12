@@ -11,7 +11,7 @@ Before running this example:
 import asyncio
 import sys
 import httpx
-from llmrouter import OllamaProvider
+from modelrouter import OllamaProvider
 
 async def check_ollama_service(base_url: str) -> bool:
     """Check if Ollama service is running."""

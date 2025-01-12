@@ -1,7 +1,7 @@
 """Example demonstrating Anthropic completion functionality."""
 import asyncio
 import os
-from llmrouter import AnthropicProvider
+from modelrouter import AnthropicProvider
 
 async def main():
     # Initialize provider

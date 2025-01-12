@@ -1,7 +1,7 @@
 """Example demonstrating streaming responses from different LLM providers."""
 import asyncio
 import os
-from llmrouter import OpenAIProvider, AnthropicProvider, OllamaProvider, Message
+from modelrouter import OpenAIProvider, AnthropicProvider, OllamaProvider, Message
 
 async def stream_chat(provider, prompt: str):
     """Stream a chat response from a provider."""

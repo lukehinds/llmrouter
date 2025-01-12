@@ -1,4 +1,4 @@
-# LLMRouter
+# ModelRouter
 
 A Python library for interfacing with various Large Language Model (LLM) inference endpoints, including OpenAI, Anthropic, and Ollama. The library provides a unified, async-first interface for interacting with different LLM providers.
 
@@ -21,21 +21,21 @@ A Python library for interfacing with various Large Language Model (LLM) inferen
 ### Using pip
 
 ```bash
-pip install llmrouter
+pip install modelrouter
 ```
 
 ### Using Poetry (recommended)
 
 ```bash
-poetry add llmrouter
+poetry add modelrouter
 ```
 
 For development:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/llmrouter.git
-cd llmrouter
+git clone https://github.com/yourusername/modelrouter.git
+cd modelrouter
 
 # Install Poetry if you haven't already
 curl -sSL https://install.python-poetry.org | python3 -
@@ -48,7 +48,7 @@ poetry install
 
 ```python
 import asyncio
-from llmrouter import OpenAIProvider, Message
+from modelrouter import OpenAIProvider, Message
 
 async def main():
     provider = OpenAIProvider(api_key="your-api-key")
@@ -168,8 +168,8 @@ Check out the `examples/` directory for more detailed examples:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/llmrouter.git
-   cd llmrouter
+   git clone https://github.com/yourusername/modelrouter.git
+   cd modelrouter
    ```
 
 2. Install Poetry:
@@ -194,13 +194,13 @@ Check out the `examples/` directory for more detailed examples:
 
 6. Format code:
    ```bash
-   poetry run black llmrouter
-   poetry run isort llmrouter
+   poetry run black modelrouter
+   poetry run isort modelrouter
    ```
 
 7. Type check:
    ```bash
-   poetry run mypy llmrouter
+   poetry run mypy modelrouter
    ```
 
 ## Contributing
