@@ -11,5 +11,6 @@ __all__ = [
     "CompletionResponse",
     "OpenAIProvider",
     "AnthropicProvider",
-    "OllamaProvider"
+    "OllamaProvider",
+    "NormalizedRequest"
 ]
