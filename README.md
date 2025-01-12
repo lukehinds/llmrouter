@@ -18,14 +18,30 @@ A Python library for interfacing with various Large Language Model (LLM) inferen
 
 ## Installation
 
+### Using pip
+
 ```bash
 pip install llmrouter
+```
+
+### Using Poetry (recommended)
+
+```bash
+poetry add llmrouter
 ```
 
 For development:
 
 ```bash
-pip install llmrouter[dev]
+# Clone the repository
+git clone https://github.com/yourusername/llmrouter.git
+cd llmrouter
+
+# Install Poetry if you haven't already
+curl -sSL https://install.python-poetry.org | python3 -
+
+# Install dependencies including development tools
+poetry install
 ```
 
 ## Quick Start
@@ -150,23 +166,41 @@ Check out the `examples/` directory for more detailed examples:
 
 ## Development
 
-1. Clone the repository
-2. Install development dependencies:
+1. Clone the repository:
    ```bash
-   pip install -e ".[dev]"
+   git clone https://github.com/yourusername/llmrouter.git
+   cd llmrouter
    ```
-3. Run tests:
+
+2. Install Poetry:
    ```bash
-   pytest
+   curl -sSL https://install.python-poetry.org | python3 -
    ```
-4. Format code:
+
+3. Install dependencies:
    ```bash
-   black llmrouter
-   isort llmrouter
+   poetry install
    ```
-5. Type check:
+
+4. Activate the virtual environment:
    ```bash
-   mypy llmrouter
+   poetry shell
+   ```
+
+5. Run tests:
+   ```bash
+   poetry run pytest
+   ```
+
+6. Format code:
+   ```bash
+   poetry run black llmrouter
+   poetry run isort llmrouter
+   ```
+
+7. Type check:
+   ```bash
+   poetry run mypy llmrouter
    ```
 
 ## Contributing
