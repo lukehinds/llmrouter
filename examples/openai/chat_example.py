@@ -34,7 +34,7 @@ async def main():
         response = await provider.chat(
             messages,
             temperature=0.9,  # More creative
-            model="gpt-4"  # Using a different model
+            model="gpt-3.5-turbo",  # Using explicit model name
         )
         print(f"Response: {response.message.content}\n")
         

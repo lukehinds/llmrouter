@@ -26,7 +26,8 @@ class OpenAIProvider(LLMProvider):
             headers={
                 "Authorization": f"Bearer {self.api_key}",
                 "Content-Type": "application/json"
-            }
+            },
+            timeout=60.0  # 60 second timeout for requests
         )
 
     async def chat(
@@ -51,12 +52,11 @@ class OpenAIProvider(LLMProvider):
         if stream:
             return self._stream_chat(payload)
 
-        async with self._client as client:
-            response = await client.post("/chat/completions", json=payload)
-            response.raise_for_status()
-            data = response.json()
+        response = await self._client.post("/chat/completions", json=payload)
+        response.raise_for_status()
+        data = response.json()
 
-            return ChatResponse(
+        return ChatResponse(
                 message=Message(
                     role=data["choices"][0]["message"]["role"],
                     content=data["choices"][0]["message"]["content"]
@@ -87,12 +87,11 @@ class OpenAIProvider(LLMProvider):
         if stream:
             return self._stream_completion(payload)
 
-        async with self._client as client:
-            response = await client.post("/completions", json=payload)
-            response.raise_for_status()
-            data = response.json()
+        response = await self._client.post("/completions", json=payload)
+        response.raise_for_status()
+        data = response.json()
 
-            return CompletionResponse(
+        return CompletionResponse(
                 text=data["choices"][0]["text"],
                 model=data["model"],
                 usage=data["usage"]
@@ -100,8 +99,7 @@ class OpenAIProvider(LLMProvider):
 
     async def _stream_chat(self, payload: Dict) -> AsyncIterator[ChatResponse]:
         """Handle streaming chat responses."""
-        async with self._client as client:
-            async with client.stream("POST", "/chat/completions", json=payload) as response:
+        async with self._client.stream("POST", "/chat/completions", json=payload) as response:
                 response.raise_for_status()
 
                 async for line in response.aiter_lines():
@@ -128,8 +126,7 @@ class OpenAIProvider(LLMProvider):
 
     async def _stream_completion(self, payload: Dict) -> AsyncIterator[CompletionResponse]:
         """Handle streaming completion responses."""
-        async with self._client as client:
-            async with client.stream("POST", "/completions", json=payload) as response:
+        async with self._client.stream("POST", "/completions", json=payload) as response:
                 response.raise_for_status()
 
                 async for line in response.aiter_lines():
